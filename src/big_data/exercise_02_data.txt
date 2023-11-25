@@ -1,0 +1,6 @@
+city,population,river
+Zurich,400000,Limmat
+Vienna,1900000,Danube
+Paris,2200000,Seine
+Rome,2900000,Tiber
+London,8700000,Thames
