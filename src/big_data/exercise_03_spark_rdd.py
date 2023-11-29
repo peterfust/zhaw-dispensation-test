@@ -37,7 +37,7 @@ output = word_counts_rdd.sortByKey()  # sortByKey can only be applied to key-val
 print(output.collect())
 
 # Save the output as file
-output.saveAsTextFile('./exercise_03_output/textfile.txt')
+#output.saveAsTextFile('./exercise_03_output/textfile.txt')
 
 # EXERCISE 3
 # ==========
