@@ -3,6 +3,7 @@ import sqlite3
 conn = sqlite3.connect("uni.db")
 cur = conn.cursor()
 
+# Creates all table for university examples...
 cur.execute("DROP TABLE IF EXISTS Studenten")
 conn.commit()
 cur.execute("""
