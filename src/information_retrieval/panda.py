@@ -29,7 +29,13 @@ print(df2.sort_values(by='D', axis=0, ascending=False))  # Zeilen sortieren nach
 print(df2.loc[1:3, ['B','D']])  # Zeile 1-3, Spalte B und D
 
 
-df = pd.read_json('./panda_bestellungen.json')
-print(df)
-df.drop_duplicates(inplace=True)
-print(df)
+df3 = pd.read_json('./panda_bestellungen.json')
+print(df3)
+df3.drop_duplicates(inplace=True)
+print(df3)
+
+data = {'äpfel': [4, 2, 0, 3, 2], 'birnen': [0, 2, 8, 0, 2]}
+df4 = pd.DataFrame(data, index=['Daniel', 'Arek', 'Martina', 'Sabrina', 'Arek'])
+print(df4)
+df4.drop_duplicates(inplace=True)
+print(df4)

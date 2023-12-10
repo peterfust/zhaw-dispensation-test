@@ -17,10 +17,12 @@ print(dataRDD.mean())
 
 dataRDD2 = dataRDD.map(lambda x: x * 3.14)
 print(dataRDD2.filter(lambda x: x > 10).collect())
+print(dataRDD2.reduce(lambda x, y: x + y))
+print("===================")
 
 # EXERCISE 2
 # ==========
-textRDD = sc.textFile('./exercise_03_data_text.txt', 2)
+textRDD = sc.textFile('./exercise_03_spark_rdd_data_text.txt', 2)
 print(textRDD.collect())
 textRDD.cache()
 print(textRDD.filter(lambda x: 'file2' in x).collect())
@@ -41,7 +43,7 @@ print(output.collect())
 
 # EXERCISE 3
 # ==========
-numericRDD = sc.textFile('./exercise_03_data_numeric.txt', 2)
+numericRDD = sc.textFile('./exercise_03_spark_rdd_data_numeric.txt', 2)
 numericRDD.cache()
 print(numericRDD.collect())
 

@@ -46,7 +46,8 @@ explodeDF = df.selectExpr("e.firstName", "e.lastName", "e.email", "e.salary")
 explodeDF.show()
 
 # Use filter() to return only the rows that match the given predicate
-filterDF = explodeDF.filter(explodeDF.firstName == "xiangrui").sort(explodeDF.lastName)
+print("=================================")
+filterDF = explodeDF.filter(explodeDF.firstName == "xiangrui").sort(explodeDF.lastName.asc())
 filterDF.show()
 filterDF = explodeDF.filter((col("firstName") == "xiangrui") | (col("firstName") == "michael")).sort(asc("lastName"))
 filterDF.show()
@@ -60,10 +61,13 @@ nonNullDF = explodeDF.fillna("--")
 nonNullDF.show()
 
 # Example aggregations using agg() and countDistinct()
+print("===========================================================================")
+explodeDF.show()
 countDistinctDF = explodeDF.select("firstName", "lastName") \
     .groupBy("firstName", "lastName") \
     .agg(countDistinct("firstName"))
 countDistinctDF.show()
+print("===========================================================================")
 
 # Compare the DataFrame and SQL Query Physical Plans (Hint: They should be the same.)
 countDistinctDF.explain()
